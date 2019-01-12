@@ -16,12 +16,21 @@ namespace Lab04_TicTacToe.Classes
 			{"7", "8", "9"},
 		};
 
-
+        /// <summary>
+        /// Display board on console
+        /// </summary>
 		public void DisplayBoard()
 		{
-			
-			//TODO: Output the board to the console
-		
+			for (int i =0; i < GameBoard.GetLength(0); i++)
+            {
+                //i rows j columns
+                for(int j = 0; j < GameBoard.GetLength(1); j++)
+                {
+                    Console.Write($"|{GameBoard[i,j]}|");
+                }
+                Console.WriteLine();
+
+            }
 		}
 	}
 }

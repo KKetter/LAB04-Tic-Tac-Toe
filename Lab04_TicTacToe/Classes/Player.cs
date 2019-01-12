@@ -11,13 +11,16 @@ namespace Lab04_TicTacToe.Classes
 		/// P1 is X and P2 will be O
 		/// </summary>
 		public string Marker { get; set; }
-
 		/// <summary>
 		/// Flag to determine if it is the user's turn
 		/// </summary>
 		public bool IsTurn { get; set; }
 
-
+        /// <summary>
+        /// Allows players to pick a game position that is not taken
+        /// </summary>
+        /// <param name="board"></param>
+        /// <returns></returns>
 		public Position GetPosition(Board board)
 		{
 			Position desiredCoordinate = null;
@@ -32,7 +35,12 @@ namespace Lab04_TicTacToe.Classes
 		}
 
 
-		public static Position PositionForNumber(int position)
+        /// <summary>
+        /// switch that assigns int values to [i,j] position from the matrix
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        public static Position PositionForNumber(int position)
 		{
 			switch (position)
 			{
