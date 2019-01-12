@@ -7,8 +7,11 @@ namespace Lab04_TicTacToe
     {
         static void Main(string[] args)
         {
-            Board NewBoard = new Board();
-            NewBoard.DisplayBoard();
+            // call Play()<-game.cs to display board
+            Player playerOne = new Player();
+            Player playerTwo = new Player();
+            Game newGame = new Game(playerOne, playerTwo);
+            newGame.Play();
         }
     }
 }
