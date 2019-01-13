@@ -32,6 +32,8 @@ namespace Lab04_TicTacToe.Classes
 		{
             PlayerOne.Marker = "X";
             PlayerTwo.Marker = "O";
+            PlayerOne.Name = "Player 1";
+            PlayerTwo.Name = "Player 2";
             int turnCount = 0;
             // while (CheckForWinner(Board) && turnCount < 10)
             while (turnCount < 10)
@@ -43,6 +45,7 @@ namespace Lab04_TicTacToe.Classes
                  Winner = PlayerOne.IsTurn ? PlayerOne : PlayerTwo;
                 }
                 turnCount++;
+                SwitchPlayer();
             }
             return Winner;
 		}
@@ -82,7 +85,10 @@ namespace Lab04_TicTacToe.Classes
                 // TODO:  Determine a winner has been reached. 
                 // if statement to compare a to b and maybe b to c???
                 // return true if a winner has been reached.
-                
+                if (a == b && b == c && a == c)
+                {
+                    return true;
+                }
 			
 			}
 
