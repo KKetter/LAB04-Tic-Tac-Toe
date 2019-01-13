@@ -11,6 +11,7 @@ namespace Lab04_TicTacToe
             Player playerOne = new Player();
             Player playerTwo = new Player();
             Game newGame = new Game(playerOne, playerTwo);
+            
             Console.WriteLine(newGame.Play().Name);
         }
     }
