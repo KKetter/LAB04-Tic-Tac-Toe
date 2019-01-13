@@ -91,6 +91,11 @@ namespace Lab04_TicTacToe.Classes
                     return true;
                     
                 }
+                else if (a == "O" && b == "O" && c == "O")
+                {
+                    Console.WriteLine("Player Two Wins");
+                    return true;
+                }
 			
 			}
 
