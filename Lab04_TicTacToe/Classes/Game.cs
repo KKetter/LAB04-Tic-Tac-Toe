@@ -25,34 +25,30 @@ namespace Lab04_TicTacToe.Classes
 		}
 
 		/// <summary>
-		/// Activate the Play of the game
+		/// starts the game
 		/// </summary>
 		/// <returns>Winner</returns>
 		public Player Play()
 		{
+            PlayerOne.Marker = "X";
+            PlayerTwo.Marker = "O";
+            PlayerOne.Name = "Player 1";
+            PlayerTwo.Name = "Player 2";
+            int turnCount = 0;
+            bool winnerCheck = false;
 
-            //TODO: Complete this method and utilize the rest of the class structure to play the game.
-
-            /*
-             * Complete this method by constructing the logic for the actual playing of Tic Tac Toe. 
-             * 
-             * A few things to get you started:
-            1. A turn consists of a player picking a position on the board with their designated marker. 
-            2. Display the board after every turn to show the most up to date state of the game
-            3. Once a Winner is determined, display the board one final time and return a winner
-
-            Few additional hints:
-                Be sure to keep track of the number of turns that have been taken to determine if a draw is required
-                and make sure that the game continues while there are unmarked spots on the board. 
-
-            Use any and all pre-existing methods in this program to help construct the method logic. 
-             */
-
-            // delete lower line at later time
-            return new Player();
+            // while (CheckForWinner(Board) && turnCount < 10)
+            while (turnCount < 10 && winnerCheck == false )
+            {
+                Board.DisplayBoard();
+                NextPlayer().TakeTurn(Board);
+                winnerCheck = CheckForWinner(Board);
+                turnCount++;
+                SwitchPlayer();
+            }
+            return Winner;
+            
 		}
-
-
 		/// <summary>
 		/// Check if winner exists
 		/// </summary>
@@ -80,13 +76,21 @@ namespace Lab04_TicTacToe.Classes
 				Position p1 = Player.PositionForNumber(winners[i][0]);
 				Position p2 = Player.PositionForNumber(winners[i][1]);
 				Position p3 = Player.PositionForNumber(winners[i][2]);
-
+                // if statement to check contents of abc strings against winners array - match bool to true
 				string a = Board.GameBoard[p1.Row, p1.Column];
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
+
+                // TODO:  Determine a winner has been reached. 
+                // if statement to compare a to b and maybe b to c???
+                // return true if a winner has been reached.
+                if (a == "X" && b == "X" && c == "X" )
+                {
+                    Console.WriteLine("Player One Wins");
+                    return true;
+                    
+                }
 			
 			}
 

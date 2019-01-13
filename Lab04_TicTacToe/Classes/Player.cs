@@ -58,7 +58,10 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-	
+	/// <summary>
+    /// Handles informing player of their turn and catches guesses for occupied spaces
+    /// </summary>
+    /// <param name="board"></param>
 		public void TakeTurn(Board board)
 		{
 			IsTurn = true;
